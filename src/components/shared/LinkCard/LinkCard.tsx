@@ -1,13 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ReactElement } from "react";
-
-
-export type TLinkCard = {
-  image: string,
-  title: string,
-  url: string,
-};
+import { ReactElement } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { TLinkCard } from '@/components/customTypes';
 
 const LinkCard = ({image, title, url}:TLinkCard):ReactElement => (
 <Link 

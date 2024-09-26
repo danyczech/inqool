@@ -1,11 +1,12 @@
-import LinkCard, { TLinkCard } from "@/components/shared/LinkCard/LinkCard";
-
+import { ReactElement } from 'react';
+import { LinkCard } from '@/components/shared';
+import { TLinkCard } from '@/components/customTypes';
 
 const dataCards:Array<TLinkCard>= [
   {
     image:'/images/users.webp',
     title: 'Users',
-    url: '/',
+    url: '/users',
   },
   {
     image: '/images/animals.webp',
@@ -14,23 +15,21 @@ const dataCards:Array<TLinkCard>= [
   }
 ];
 
-const Home = () => (
-    <div className="m-10">
+const Home = ():ReactElement => (
+  <div className="m-10">
 
-      <main className="flex gap-8 items-center">
-        {dataCards.map(({image, title, url}, index) => (
-          <LinkCard 
-            image={image}
-            key={index}
-            title={title}
-            url={url}
-          />
-        ))
-        }
-      </main>
+    <main className="flex gap-8 items-center">
+      {dataCards.map(({image, title, url}, index) => (
+        <LinkCard 
+          image={image}
+          key={index}
+          title={title}
+          url={url}
+        />
+      ))}
+    </main>
 
-    </div>
-  );
-
+  </div>
+);
 
 export default Home;

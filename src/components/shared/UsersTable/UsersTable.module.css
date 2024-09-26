@@ -1,0 +1,7 @@
+.table :where(th, td) {
+  @apply px-2;
+}
+
+.table tbody {
+  @apply divide-y-2 divide-gray-300;
+}
