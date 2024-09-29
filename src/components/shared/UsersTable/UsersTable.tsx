@@ -2,6 +2,7 @@
 import { ReactElement, useState } from 'react';
 import { TUser } from '@/components/customTypes';
 import Button from '../Button/Button';
+import AddUser from '../AddUser/AddUser';
 import style from './UsersTable.module.css';
 
 interface IProps {
@@ -12,20 +13,20 @@ const UsersTable = ({users}:IProps):ReactElement => {
 
   const [search, setSearch] = useState('');
 
+
   return(
-  <div className="mt-10 ml-10'">
+  <div className={style.container}>
 
     <div>
       <label htmlFor="name-search">Search the name:</label>
       <input
-        className="border-solid border-2 border-gray-400 rounded-md mx-2"
+        className="input"
         id="name-search"
         onChange={(e) => setSearch(e.target.value)} 
         type="text" 
         value={search} 
       />
       <Button
-        className="" 
         onClick={()=> setSearch('')}
         type="button"
         variant="search" 
@@ -33,7 +34,6 @@ const UsersTable = ({users}:IProps):ReactElement => {
         Clear search
       </Button>
     </div>
-
 
     <table className={style.table}>
       <thead>
@@ -67,6 +67,9 @@ const UsersTable = ({users}:IProps):ReactElement => {
       </tbody>
 
     </table>
+
+    <AddUser/>
+
   </div>
 )}
 

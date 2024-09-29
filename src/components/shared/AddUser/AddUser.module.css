@@ -1,0 +1,15 @@
+.container {
+  @apply my-3 p-4 w-fit border-solid border-2 border-gray-400 rounded-md;
+}
+
+.form {
+  @apply flex justify-start items-center;
+}
+
+.checkbox {
+  @apply mx-2;
+}
+
+.error {
+  @apply text-red-600;
+}

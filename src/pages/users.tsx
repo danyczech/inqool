@@ -21,8 +21,7 @@ const Users = ():ReactElement => {
         return response.json();
       })
       .then((resData) => {
-        setUsers(resData)
-        console.log(resData);
+        setUsers(resData);
       })
       .catch(error => {
         return <ErrorPage title='Sorry, error when loading the users' message={error} />  
@@ -39,4 +38,3 @@ const Users = ():ReactElement => {
   )};
   
   export default Users;
-  

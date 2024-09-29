@@ -1,3 +1,7 @@
+.container {
+  @apply mt-10 ml-10;
+}
+
 .table :where(th, td) {
   @apply px-2;
 }
