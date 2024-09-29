@@ -2,10 +2,22 @@
   @apply mt-10 ml-10;
 }
 
+.table {
+  @apply table-auto;
+}
+
 .table :where(th, td) {
   @apply px-2;
 }
 
 .table tbody {
   @apply divide-y-2 divide-gray-300;
+}
+
+.button {
+  @apply flex justify-center items-center;
+}
+
+.banned {
+  @apply w-3 h-3 bg-red-600 mt-5 cursor-default;
 }

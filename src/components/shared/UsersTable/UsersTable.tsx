@@ -58,7 +58,7 @@ const UsersTable = ({users}:IProps):ReactElement => {
               <td>{user.id}</td>
               <td>{user.name}</td>
               <td>{user.gender}</td>
-              <td><input type="checkbox" id={user.id} checked={user.banned}/></td> {/* add onChange */}
+              <td className={style.button}><button type="button" id={user.id} className={ user.banned ? style.banned : '' } /></td>
               <td><Button variant="basic">Edit</Button></td>
             </tr>
           )}
