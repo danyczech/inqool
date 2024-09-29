@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { useRouter } from 'next/router';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from "yup";
 import { TUser } from '@/components/customTypes';
@@ -8,6 +9,8 @@ import style from './AddUser.module.css';
 type TFormValues = Omit <TUser, 'id'>
 
 const AddUser = ():ReactElement => {
+
+  const router = useRouter();
 
   const initialValues:TFormValues={
     name:'',
@@ -31,6 +34,8 @@ const AddUser = ():ReactElement => {
         const error = (data && data.message) || response.status;
           return Promise.reject(error);
       }
+
+      router.push('/users');
     })
     .catch(error => {
       console.error('There was an error!', error);

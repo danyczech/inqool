@@ -1,8 +1,8 @@
 
 import { ReactElement, useState } from 'react';
+import { useRouter } from 'next/router';
 import { TUser } from '@/components/customTypes';
 import Button from '../Button/Button';
-import AddUser from '../AddUser/AddUser';
 import style from './UsersTable.module.css';
 
 interface IProps {
@@ -12,6 +12,7 @@ interface IProps {
 const UsersTable = ({users}:IProps):ReactElement => {
 
   const [search, setSearch] = useState('');
+  const router = useRouter();
 
 
   return(
@@ -35,6 +36,12 @@ const UsersTable = ({users}:IProps):ReactElement => {
       </Button>
     </div>
 
+    <div>
+      <Button onClick={()=> router.push('/users/new')} variant="basic">
+        Add a user
+      </Button>
+    </div>
+
     <table className={style.table}>
       <thead>
         <tr>
@@ -47,7 +54,7 @@ const UsersTable = ({users}:IProps):ReactElement => {
       </thead>
 
       <tbody>
-          
+
         {users
         .filter(item => {
           return search.toLowerCase() === '' ? item : item.name.toLowerCase().includes(search);
@@ -63,12 +70,9 @@ const UsersTable = ({users}:IProps):ReactElement => {
             </tr>
           )}
         )}
-              
+
       </tbody>
-
     </table>
-
-    <AddUser/>
 
   </div>
 )}
