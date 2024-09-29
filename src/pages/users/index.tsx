@@ -6,7 +6,6 @@ const Users = ():ReactElement => {
 
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
-  //const [error, setError] = useState();
 
   useEffect(() => {
     setLoading(true);
@@ -30,11 +29,10 @@ const Users = ():ReactElement => {
 
   }, []);
   
+  if (loading) return <p>Data Loading...</p>
 
-  return(
-  <>
-    { loading ? <p>Data is loading...</p> : <UsersTable users={users} /> }
-  </>
-  )};
+  return <UsersTable users={users} />
+
+};
   
-  export default Users;
+export default Users;

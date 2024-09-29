@@ -66,7 +66,7 @@ const UsersTable = ({users}:IProps):ReactElement => {
               <td>{user.name}</td>
               <td>{user.gender}</td>
               <td className={style.button}><button type="button" id={user.id} className={ user.banned ? style.banned : '' } /></td>
-              <td><Button variant="basic">Edit</Button></td>
+              <td><Button onClick={()=> router.push(`/users/${user.id}`)} variant="basic">Edit</Button></td>
             </tr>
           )}
         )}
